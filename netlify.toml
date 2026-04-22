@@ -1,0 +1,39 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[dev]
+  command = "npm run dev"
+  port = 3000
+
+# Serve the Decap CMS admin app directly (must come before the catch-all)
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin/"
+  to = "/admin/index.html"
+  status = 200
+
+# Required for Netlify Identity / Git Gateway OAuth flow
+[[redirects]]
+  from = "/.netlify/identity"
+  to = "https://netlify.com/.netlify/identity"
+  status = 200
+  force = true
+
+# 404 fallback for all other unmatched routes
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Security headers for the admin panel
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

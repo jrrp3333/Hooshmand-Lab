@@ -1,0 +1,125 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: en
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "research"
+    label: "Research Projects"
+    label_singular: "Research Project"
+    folder: "content/research"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "Name of the research project"
+      - label: "Short Description"
+        name: "description"
+        widget: "text"
+        hint: "One or two sentences shown on the homepage and research list"
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        hint: "Date this project was added or last updated"
+      - label: "Display Order"
+        name: "order"
+        widget: "number"
+        default: 99
+        required: false
+        hint: "Lower numbers appear first (1, 2, 3...)"
+      - label: "Full Description"
+        name: "body"
+        widget: "markdown"
+        required: false
+        hint: "Optional longer description of the project"
+      - label: "Project Image"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Optional image representing this research area"
+
+  - name: "news"
+    label: "News & Announcements"
+    label_singular: "News Item"
+    folder: "content/news"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        hint: "Date of the announcement"
+      - label: "Short Excerpt"
+        name: "excerpt"
+        widget: "text"
+        hint: "One or two sentences shown in news previews"
+      - label: "Full Content"
+        name: "body"
+        widget: "markdown"
+        required: false
+        hint: "Optional full text of the announcement"
+
+  - name: "team"
+    label: "Team Members"
+    label_singular: "Team Member"
+    folder: "content/team"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Full Name"
+        name: "name"
+        widget: "string"
+      - label: "Role"
+        name: "role"
+        widget: "select"
+        options:
+          - "Faculty"
+          - "Graduate Student"
+          - "Undergraduate Student"
+          - "Postdoctoral Fellow"
+          - "Collaborator"
+      - label: "Title / Position"
+        name: "title"
+        widget: "string"
+        hint: "e.g., Professor and Lab Director, PhD Candidate"
+      - label: "Specialization"
+        name: "specialization"
+        widget: "string"
+        required: false
+      - label: "Email"
+        name: "email"
+        widget: "string"
+        required: false
+      - label: "Office"
+        name: "office"
+        widget: "string"
+        required: false
+        hint: "e.g., Center for Sciences, Room 201"
+      - label: "Display Order"
+        name: "order"
+        widget: "number"
+        default: 99
+        required: false
+        hint: "Lower numbers appear first (1 = Dr. Hooshmand, 2+ for others)"
+      - label: "Bio"
+        name: "body"
+        widget: "markdown"
+        required: false
+        hint: "Optional short biography"
+      - label: "Photo"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Upload a headshot or profile photo"

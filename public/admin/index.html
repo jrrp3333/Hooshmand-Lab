@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager – Dr. Hooshmand's Research Lab</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+      /* ── Branded loading screen ── */
+      *, *::before, *::after { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: #f4efe6;
+      }
+
+      #cms-loading {
+        position: fixed;
+        inset: 0;
+        background: #0c2340;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        z-index: 99999;
+        transition: opacity 0.5s ease;
+      }
+      #cms-loading.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #cms-loading .logo-eyebrow {
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #b3a369;
+        margin: 0;
+      }
+      #cms-loading h1 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #f4efe6;
+        margin: 0 0 4px;
+        text-align: center;
+      }
+      #cms-loading .subtitle {
+        font-size: 0.85rem;
+        color: rgba(244,239,230,0.6);
+        margin: 0 0 28px;
+      }
+      #cms-loading .spinner {
+        width: 32px;
+        height: 32px;
+        border: 3px solid rgba(0, 140, 149, 0.25);
+        border-top-color: #008c95;
+        border-radius: 50%;
+        animation: spin 0.75s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+
+      /* ── Override Decap CMS accent colours to match site palette ── */
+      /* Header bar */
+      [class*="AppHeaderContent"],
+      header[class*="AppHeader"] {
+        background: #0c2340 !important;
+      }
+      /* Sidebar / collection list */
+      [class*="CollectionTopRow"],
+      [class*="Sidebar"] nav,
+      aside[class*="Sidebar"] {
+        background: #102a43 !important;
+      }
+      [class*="SidebarNavLink"],
+      [class*="CollectionTitle"] {
+        color: #f4efe6 !important;
+      }
+      [class*="SidebarNavLink"]:hover,
+      [class*="SidebarNavLink"][class*="active"] {
+        background: rgba(0,140,149,0.18) !important;
+        color: #f4efe6 !important;
+      }
+      /* Buttons */
+      button[class*="CmsButton--primary"],
+      [class*="Button--primary"],
+      [class*="SaveButton"] {
+        background-color: #008c95 !important;
+        border-color: #008c95 !important;
+        color: #fff !important;
+      }
+      button[class*="CmsButton--primary"]:hover,
+      [class*="Button--primary"]:hover {
+        background-color: #006e75 !important;
+      }
+      /* Links */
+      a[class*="Link"],
+      [class*="Anchor"] {
+        color: #008c95 !important;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Branded splash shown while CMS loads -->
+    <div id="cms-loading">
+      <p class="logo-eyebrow">TAMUCC · Content Manager</p>
+      <h1>Dr. Hooshmand's Research Lab</h1>
+      <p class="subtitle">Loading the content editor&hellip;</p>
+      <div class="spinner"></div>
+    </div>
+
+    <script>
+      // Hide loading screen once the CMS app has mounted
+      document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+          var el = document.getElementById('cms-loading');
+          if (el) el.classList.add('hidden');
+        }, 1800);
+      });
+
+      // After login redirect back to /admin
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', function (user) {
+          if (!user) {
+            window.netlifyIdentity.on('login', function () {
+              document.location.href = '/admin/';
+            });
+          }
+        });
+      }
+    </script>
+
+    <!-- Decap CMS (formerly Netlify CMS) -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  </body>
+</html>
