@@ -123,3 +123,54 @@ collections:
         widget: "image"
         required: false
         hint: "Upload a headshot or profile photo"
+
+  - name: "publications"
+    label: "Publications"
+    label_singular: "Publication"
+    folder: "content/publications"
+    create: true
+    delete: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Journal Paper"
+          - "Invited Book Chapter"
+          - "Invited Talk"
+          - "Seminar"
+          - "Conference Presentation"
+      - label: "Year"
+        name: "year"
+        widget: "number"
+        hint: "Publication year (e.g. 2024)"
+      - label: "Authors"
+        name: "authors"
+        widget: "string"
+        required: false
+        hint: "Author list as it appears in the citation"
+      - label: "Venue"
+        name: "venue"
+        widget: "string"
+        required: false
+        hint: "Journal name, conference, or institution"
+      - label: "Details"
+        name: "details"
+        widget: "string"
+        required: false
+        hint: "Volume, pages, issue, location, date, etc."
+      - label: "DOI"
+        name: "doi"
+        widget: "string"
+        required: false
+        hint: "DOI only, without https://doi.org/ prefix"
+      - label: "Display Order"
+        name: "order"
+        widget: "number"
+        default: 99
+        required: false
+        hint: "Lower numbers appear first within the same year"

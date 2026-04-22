@@ -62,3 +62,22 @@ export function getNewsItems(): NewsItem[] {
 export function getTeamMembers(): TeamMember[] {
   return getCollection<TeamMember>('team').sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
 }
+
+export interface Publication {
+  slug: string;
+  title: string;
+  authors?: string;
+  venue?: string;
+  year: number;
+  details?: string;
+  doi?: string;
+  category: string;
+  order?: number;
+}
+
+export function getPublications(): Publication[] {
+  return getCollection<Publication>('publications').sort((a, b) => {
+    if (a.year !== b.year) return b.year - a.year;
+    return (a.order ?? 99) - (b.order ?? 99);
+  });
+}
