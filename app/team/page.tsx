@@ -41,9 +41,9 @@ export default function TeamPage() {
                           <Image
                             src={member.image}
                             alt={`Photo of ${member.name}`}
-                            width={140}
-                            height={140}
-                            className="member-photo"
+                            width={member.role === 'Faculty' ? 160 : 140}
+                            height={member.role === 'Faculty' ? 200 : 140}
+                            className={`member-photo${member.role === 'Faculty' ? ' member-photo--sharp' : ''}`}
                           />
                         </div>
                       )}

@@ -6,6 +6,7 @@ specialization: "Nanoplasmonics, Colloid Chemistry, Light-Matter Interaction"
 email: "nasrin.hooshmand@tamucc.edu"
 office: "CS 250"
 order: 1
+image: "/images/uploads/dr-nasrin-hooshmand.jpg"
 ---
 
 Dr. Nasrin Hooshmand is an Assistant Professor in the Department of Physical and Environmental Sciences at Texas A&M University–Corpus Christi (TAMUCC), where she joined the faculty in 2024. She earned her M.Sc and Ph.D. in physical chemistry and previously served as a Principal Research Scientist in the School of Chemistry and Biochemistry at Georgia Tech.

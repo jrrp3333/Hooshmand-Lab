@@ -3,6 +3,7 @@ title: "Active Metal Nanoparticles for Monitoring Surface Catalytic Reactions"
 description: "Developing advanced plasmonic nanostructures with precisely tunable geometries to probe and enhance surface-catalytic and photocatalytic reactions in real time using SERS and LSPR spectroscopy."
 date: "2024-01-03"
 order: 3
+image: "/images/uploads/catalytic-np.png"
 ---
 
 Plasmonic nanoparticles are not merely passive sensors—they actively participate in surface chemical reactions by concentrating electromagnetic energy at catalytic sites. Our research uses in-situ surface-enhanced Raman spectroscopy (SERS) and localized surface plasmon resonance (LSPR) to track bond-breaking and bond-forming events on metal nanoparticle surfaces with molecular specificity.

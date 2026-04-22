@@ -3,6 +3,7 @@ title: "Innovative Approaches to Cancer Treatment Using Nanoparticle-Based Thera
 description: "Harnessing gold nanoparticles and engineered nanoconstructs for synergistic photothermal, chemotherapy, and photodynamic cancer treatments, with computational modeling guiding nanoparticle design."
 date: "2024-01-02"
 order: 2
+image: "/images/uploads/cancer-detection.png"
 ---
 
 Our lab develops nanoparticle-based therapeutic platforms that exploit plasmon-enhanced photothermal effects to selectively destroy tumor cells while sparing healthy tissue. By combining gold nanorods, mesoporous silica carriers, and stimuli-responsive drug release, we achieve synergistic chemo-photothermal outcomes that outperform either modality alone.

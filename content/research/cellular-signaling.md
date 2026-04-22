@@ -3,6 +3,7 @@ title: "Advancing Nanoparticle Assembly for Tunable Plasmonic Properties"
 description: "Engineering metallic nanoparticles with precise geometry to achieve tunable plasmonic resonances for ultrasensitive sensing, cancer biomarker detection, solar energy harvesting, and rapid diagnostics."
 date: "2024-01-01"
 order: 1
+image: "/images/uploads/np-solar-spec.png"
 ---
 
 Our group engineers plasmonic nanoparticle assemblies—clusters, chains, and arrays of gold and silver nanocubes and nanorods—whose optical response can be dialed by controlling interparticle separation, orientation, and the dielectric environment. At sub-nanometer gap distances, near-field coupling gives rise to intense electromagnetic "hot spots" that amplify spectroscopic signals by many orders of magnitude.

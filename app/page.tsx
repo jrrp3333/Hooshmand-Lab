@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getResearchPosts, getNewsItems } from '../lib/content';
 
 export default function Home() {
@@ -54,6 +55,31 @@ export default function Home() {
                 Sciences in the Center for Sciences, CS 250.
               </p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section lab-goals-section">
+        <div className="section-inner">
+          <div className="section-header">
+            <div>
+              <div className="section-kicker">Our Approach</div>
+              <h2 className="section-title">From Simulation to Real-World Impact</h2>
+            </div>
+            <p className="section-copy">
+              We combine multiscale simulations with precision nanoparticle synthesis to model optical properties
+              and translate them into applications in sensing, diagnostics, cancer treatment, and solar energy.
+            </p>
+          </div>
+          <div className="lab-goals-image-wrap">
+            <Image
+              src="/images/uploads/pnp-overview.png"
+              alt="Lab research overview: plasmonic nanoparticle assembly for chemical sensing, medical diagnostics, cancer detection, and solar cell technology"
+              width={1100}
+              height={520}
+              className="lab-goals-image"
+              priority
+            />
           </div>
         </div>
       </section>
