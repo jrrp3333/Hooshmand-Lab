@@ -130,6 +130,12 @@
           }
         });
       }
+
+      // Enable local backend when running on localhost
+      // (requires: npx netlify-cms-proxy-server in a separate terminal)
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        window.CMS_ENV = 'development';
+      }
     </script>
 
     <!-- Decap CMS (formerly Netlify CMS) -->

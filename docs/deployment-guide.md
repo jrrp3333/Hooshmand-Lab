@@ -89,7 +89,42 @@ This is a fully static site. Once connected to Netlify, every push to the GitHub
 
 ---
 
-## Ongoing deployments
+## Setting up the Admin Panel (Decap CMS + Netlify Identity)
+
+The admin panel at `/admin` requires two Netlify services to be enabled after deployment.
+
+### Step 1: Enable Netlify Identity
+
+1. In Netlify, go to **Site settings > Identity**
+2. Click **"Enable Identity"**
+3. Under **Registration preferences**, select **"Invite only"** (so only invited users can create accounts)
+4. Scroll down to **"External providers"** — you can optionally enable Google login
+5. Click **"Save"**
+
+### Step 2: Enable Git Gateway
+
+Git Gateway allows Decap CMS to commit content changes to your GitHub repository.
+
+1. In Netlify, go to **Site settings > Identity > Services**
+2. Click **"Enable Git Gateway"**
+3. Authorize Netlify to access your GitHub repository when prompted
+
+### Step 3: Invite the content editor
+
+1. In Netlify, go to **Site settings > Identity > Users**
+2. Click **"Invite users"**
+3. Enter the professor's email address
+4. The professor receives an email with a link to set their password
+5. After setting the password, they can log in at `https://hooshmandlabs.org/admin`
+
+### Step 4: Verify the admin panel
+
+1. Visit `https://hooshmandlabs.org/admin`
+2. Log in with the professor's credentials
+3. Verify all four collections are accessible: News, Research, Team, Publications
+4. Create a test entry and confirm it appears on the live site after 1–2 minutes
+
+---
 
 Every time you push to the `main` branch on GitHub:
 
@@ -126,7 +161,6 @@ Every time you push to the `main` branch on GitHub:
 
 ## Future considerations
 
-- **Content management:** Currently, content edits require code changes and Git pushes. In the future, you can integrate a headless CMS (like Decap CMS) to let the professor edit content via a web interface without touching code.
 - **Analytics:** Add Netlify Analytics, Google Analytics, or another tool to track site traffic and visitor behavior.
 - **Performance:** Monitor site performance using Netlify's built-in tools or Lighthouse audits.
 - **Backups:** GitHub is your backup system; always keep the repository up-to-date.
