@@ -1,158 +1,147 @@
-# Hooshmand Lab – Static Site for Netlify
+# Hooshmand Lab Website
 
-## Overview
+A clean, professional website for the Hooshmand Lab research group. Built with **Next.js**, hosted on **Netlify**, and connected to **hooshmandlab.org** via Namecheap.
 
-This is a modern static site built with **Next.js** and deployed to **Netlify**. It's designed for academic credibility, fast performance, and easy hosting via GitHub and Namecheap.
+## What's Here
 
-**Key features:**
-- Formal academic design with Georgia Tech-inspired clarity and TAMUCC-aware color accents
-- Fast static HTML generation with Next.js
-- Responsive mobile-first design
-- Built-in templates for all core sections: Home, Research, Publications, Team, News, Contact
-- Seamless Netlify deployment from GitHub
-- No server required; fully static and cacheable
+This is the redesigned Hooshmand Lab website—migrated from the old WordPress site on DreamHost. The new site is faster, more maintainable, and designed to reflect the lab's commitment to credibility and clarity.
 
-## Project structure
+**What you get:**
+- A beautiful, responsive academic site (mobile-friendly)
+- Pages for Home, Research, Publications, Team, News, and Contact
+- An admin panel so the lab PI can update content without touching code
+- Automatic deployments: push to GitHub → Netlify builds → site updates live
+- Fast global performance via Netlify's CDN
+- HTTPS and SSL out of the box
 
-```
-├── app/
-│   ├── layout.tsx             # Global layout with Header, Footer
-│   ├── page.tsx               # Homepage
-│   ├── research/page.tsx      # Research page
-│   ├── publications/page.tsx  # Publications page
-│   ├── team/page.tsx          # Team page
-│   ├── news/page.tsx          # News archive page
-│   ├── contact/page.tsx       # Contact page
-│   ├── components/
-│   │   ├── Header.tsx         # Navigation header
-│   │   └── Footer.tsx         # Site footer
-│   └── styles/
-│       └── globals.css        # Design system, layout, responsive
-├── public/                    # Static assets (images, etc.)
-├── next.config.js            # Next.js configuration
-├── netlify.toml              # Netlify deployment config
-├── package.json              # Dependencies and scripts
-└── .gitignore                # Git ignore rules
-```
+## Getting Started (Locally)
 
-## Local development
+### Prerequisites
+- Node.js 18+ installed
+- Git
 
-1. **Clone the repository** from GitHub:
+### Setup
+
+1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/hooshmand-lab.git
-   cd hooshmand-lab
+   git clone https://github.com/jrrp3333/Hooshmand-Lab.git
+   cd "Hooshmands Website"
    ```
 
-2. **Install dependencies:**
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-3. **Run the development server:**
+3. Run the dev server:
    ```bash
    npm run dev
    ```
-   Visit `http://localhost:3000` in your browser.
+   Then visit `http://localhost:3000`
 
-4. **Build for production:**
+4. Build for production:
    ```bash
    npm run build
    ```
-   This generates static HTML in the `out/` folder.
+   The static HTML will be generated in the `out/` folder.
 
-## Deployment to Netlify
+## Project Structure
 
-### Prerequisites
-- GitHub account (repository already created)
-- Netlify account (linked to GitHub)
-- Namecheap domain registered and ready to connect
+```
+app/
+├── layout.tsx              # Global header, footer, layout
+├── page.tsx                # Homepage
+├── research/page.tsx       # Research section
+├── publications/page.tsx   # Publications
+├── team/page.tsx           # Team members
+├── news/page.tsx           # News & updates
+├── contact/page.tsx        # Contact form
+├── components/
+│   ├── Header.tsx
+│   └── Footer.tsx
+└── styles/
+    └── globals.css         # All colors, typography, layout
 
-### Step-by-step
+public/                      # Images, logos, PDFs
+next.config.js              # Next.js settings
+netlify.toml                # Netlify deployment config
+package.json                # Dependencies
+```
 
-1. **Connect GitHub to Netlify:**
-   - Log into Netlify (netlify.com)
-   - Click "New site from Git"
-   - Select GitHub and authorize Netlify
-   - Choose the `hooshmand-lab` repository
-   - Netlify auto-detects the build command from `netlify.toml`
-   - Click "Deploy"
+## Updating Content
 
-2. **Verify the deployment:**
-   - Netlify assigns a temporary URL (e.g., `hooshmand-lab-123abc.netlify.app`)
-   - Visit the URL to confirm the site is live
-   - You can use this URL for testing before connecting the custom domain
+### For the Lab PI (No Code Required)
 
-3. **Connect your Namecheap domain:**
-   - In Netlify, go to `Site settings > Domain management`
-   - Click "Add custom domain"
-   - Enter `hooshmandlab.org`
-   - Netlify will show nameserver instructions
-   - Log into Namecheap, find your domain, and update nameservers to Netlify's
-   - Wait for DNS propagation (usually 1–2 hours, sometimes faster)
-   - Verify that `https://hooshmandlab.org` resolves correctly
+The admin panel lets you update content without touching code. Log in at `/admin` to modify:
+- **Research**: Lab focus areas and descriptions
+- **Team**: Add/edit member profiles and photos
+- **Publications**: Add papers, PDFs, or links
+- **News**: Post lab updates and announcements
 
-4. **Enable SSL (automatic):**
-   - Netlify automatically provisions Let's Encrypt SSL certificates
-   - HTTPS should be live once DNS propagates
+### For Developers
 
-### Automatic deployments
+Content is stored in React components. To make changes:
 
-- Every push to the GitHub `main` branch triggers an automatic Netlify build and deploy
-- The site will be live at `hooshmandlab.org` within 1–2 minutes
+1. Edit the relevant page in `app/`
+   - Homepage content: `app/page.tsx`
+   - Team members: `app/team/page.tsx`
+   - Publications: `app/publications/page.tsx`
+   - News: `app/news/page.tsx`
+   - Styling: `app/styles/globals.css`
 
-## Editing content
+2. Commit and push:
+   ```bash
+   git add .
+   git commit -m "Update homepage content"
+   git push origin main
+   ```
 
-Since this is a static site, content is baked into the code. To update the site:
+3. Netlify automatically rebuilds and deploys—your changes will be live in 1–2 minutes.
 
-1. **Edit React components** in the `app/` folder (e.g., `app/page.tsx` for homepage)
-2. **Commit changes** to GitHub
-3. **Push to `main`** — Netlify automatically rebuilds and deploys
+## Deployment
 
-### Common edits
+The site is currently hosted on **Netlify** and connected to **hooshmandlab.org**.
 
-- **Homepage hero text:** Edit `app/page.tsx` (search for "biomedical research lab")
-- **Team members:** Edit `app/team/page.tsx`
-- **Publications:** Edit `app/publications/page.tsx`
-- **News items:** Edit `app/news/page.tsx`
-- **Colors and styles:** Edit `app/styles/globals.css`
+### How it works:
+- GitHub repo is linked to Netlify
+- Every push to `main` triggers an automatic build and deploy
+- The site rebuilds and goes live at `hooshmandlab.org` within 1–2 minutes
+- No manual deployment needed
 
-For now, the professor can request edits via email, and you can make them quickly. In a future iteration, you can add a headless CMS (like Decap CMS) to allow non-technical content updates.
+### If you need to update the domain or hosting:
+- **Domain registrar**: Namecheap (hooshmandlab.org)
+- **Hosting**: Netlify
+- **DNS**: Managed by Namecheap, pointing to Netlify nameservers
 
-## Design decisions
+## Design & Colors
 
-### Color palette
-- **Navy ink (#102a43, #0c2340):** Primary text and UI
-- **Teal (#008c95):** Accent links, metadata, highlights
-- **Sand/cream (#f4efe6):** Soft background
-- **Gold (#b3a369):** Secondary accent for depth
-- **White, borders, and muted grays:** Neutral structure
+The site uses a clean, academic aesthetic inspired by the client's preferences:
 
-### Typography
-- **Display: Georgia serif** — Headers and brand
-- **Body: Segoe UI / Helvetica Neue** — Readable, institutional
+- **Black & stone tones**: Muted, professional color palette with no bright accents
+- **Typography**: Serif headers and clean, readable body text
+- **Imagery**: Soft corners on images (no harsh square crops)
+- **Minimalist approach**: Subtle shadows, lots of whitespace
+- **Feel**: Trust, professionalism, calm
 
-### Mobile behavior
-- Navigation collapses to a hamburger menu at 960px
-- Grid layouts reflow to single column on mobile
-- Touch-friendly button sizes (40px+ min)
+All colors and typography are defined in `app/styles/globals.css` and can be easily adjusted.
 
-## Performance benefits
+## Performance & Security
 
-- **Fast:** Static HTML loads instantly, cached globally by Netlify's CDN
-- **Secure:** No server vulnerabilities; no database to manage
-- **Scalable:** Handles traffic spikes without additional infrastructure
-- **SEO-friendly:** All pages are pre-rendered with proper metadata
+- **Fast**: No server—just static HTML served globally via CDN
+- **Secure**: No databases, no server vulnerabilities, no attack surface
+- **SEO-friendly**: All pages are pre-rendered with proper metadata
+- **Maintainable**: Version-controlled on GitHub, automated deployments, no DevOps overhead
 
-## Maintenance
+## Need Help?
 
-- **Keep dependencies updated:** Run `npm install` periodically to get security updates
-- **GitHub + Netlify:** Everything is version-controlled and automatically deployed
-- **Content updates:** Edit pages in code, push to GitHub, and Netlify handles the rest
+For questions or updates:
+- Contact the lab PI or lead developer
+- Issues and feature requests can be tracked on GitHub
+- Keep dependencies updated regularly (`npm install`)
 
 ---
 
-**Site version:** 0.1.0  
-**Stack:** Next.js + Netlify + GitHub + Namecheap  
-**Last updated:** April 21, 2026  
-**Status:** Ready for deployment and live at hooshmandlab.org
-# Hooshmand-Lab
+**Current Version**: 0.2.0  
+**Stack**: Next.js + Netlify + GitHub  
+**Domain**: hooshmandlab.org  
+**Status**: Live and fully operational
