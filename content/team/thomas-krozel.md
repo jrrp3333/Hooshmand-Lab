@@ -1,6 +1,6 @@
 ---
 name: "Thomas Krozel"
-role: "Undergraduate Student"
+role: "Alumni"
 title: "Undergraduate Researcher"
 specialization: "Electrical Engineering, Sensor-Integrated Systems"
 email: "tkrozel@islander.tamucc.edu"

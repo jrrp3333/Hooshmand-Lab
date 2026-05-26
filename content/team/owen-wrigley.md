@@ -1,6 +1,6 @@
 ---
 name: "Owen Wrigley"
-role: "Undergraduate Student"
+role: "Alumni"
 title: "Undergraduate Researcher"
 specialization: "Electrical Engineering, Electromagnetics and Power Systems"
 email: "owrigley@islander.tamucc.edu"

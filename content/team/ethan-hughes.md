@@ -1,6 +1,6 @@
 ---
 name: "Ethan Hughes"
-role: "Undergraduate Student"
+role: "Alumni"
 title: "Undergraduate Researcher"
 specialization: "Electrical Engineering, Embedded Electronics"
 email: "ehughes2@islander.tamucc.edu"

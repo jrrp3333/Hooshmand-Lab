@@ -1,6 +1,6 @@
 ---
 name: "Rogelio Pena"
-role: "Undergraduate Student"
+role: "Alumni"
 title: "Undergraduate Researcher"
 specialization: "Nuclear Engineering, Nanoparticles for Cancer Research"
 email: "roena30@islander.tamucc.edu"

@@ -6,7 +6,7 @@ export const metadata = {
   description: "Faculty, students, and collaborators in Dr. Hooshmand's research lab.",
 };
 
-const ROLE_ORDER = ['Faculty', 'Postdoctoral Fellow', 'Graduate Student', 'Undergraduate Student', 'Collaborator'];
+const ROLE_ORDER = ['Faculty', 'Postdoctoral Fellow', 'Graduate Student', 'Alumni', 'Collaborator'];
 
 export default function TeamPage() {
   const members = getTeamMembers();
@@ -33,7 +33,7 @@ export default function TeamPage() {
             <div className="entry-content">
               {Object.entries(grouped).map(([role, group]) => (
                 <section key={role}>
-                  <h2>{role === 'Faculty' ? 'Faculty' : role + 's'}</h2>
+                  <h2>{role === 'Faculty' || role === 'Alumni' ? role : role + 's'}</h2>
                   {group.map((member) => (
                     <div key={member.slug} className="member-card">
                       {member.image && (
