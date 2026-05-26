@@ -14,6 +14,3 @@ Dr. Nasrin Hooshmand is an Assistant Professor in the Department of Physical and
 Dr. Hooshmand is recognized for her work on the application of colloid chemistry to the field of nanoplasmonics. Her research interests center on light-matter interaction at the nanoscale, with the goal of developing novel solutions for chemical and biological sensing, energy harvesting, nanomedicine, and healthcare applications.
 
 Her significant contributions to research, teaching, and leadership have earned her several awards, including the Research Faculty–Community Leadership Impact Award (2023), the Research Faculty Teaching Fellow Award (2021), recognition as a leading Woman@Tech (2021), and inclusion in Georgia Tech's 2020 Faces of Inclusive Excellence publication.
-
-**Google Scholar:** [scholar.google.com](https://scholar.google.com/citations?user=nIoqSDQAAAAJ&hl=en)  
-**TAMUCC Directory:** [faculty profile](https://www.tamucc.edu/files/php/views/faculty-details.php?profile=Nasrin_Hooshmand)
