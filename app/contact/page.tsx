@@ -1,3 +1,5 @@
+import ContactForm from '@/app/components/ContactForm';
+
 export const metadata = {
   title: "Contact | Dr. Hooshmand's Research Lab",
   description: "Get in touch with Dr. Hooshmand's research lab at Texas A&M University-Corpus Christi.",
@@ -61,37 +63,8 @@ export default function ContactPage() {
             </div>
           </article>
 
-          <div className="surface-card contact-card">
-            <span className="card-meta">Quick Info</span>
-            <h2 className="card-title">Dr. Hooshmand&apos;s Research Lab</h2>
-            <p>
-              <strong>Center for the Sciences, CS 250</strong>
-              <br />
-              Texas A&amp;M University–Corpus Christi
-              <br />
-              6300 Ocean Dr.
-              <br />
-              Corpus Christi, TX 78412
-            </p>
-            <p>
-              <strong>Email</strong>
-              <br />
-              <a href="mailto:nasrin.hooshmand@tamucc.edu">nasrin.hooshmand@tamucc.edu</a>
-            </p>
-            <p>
-              <strong>Phone</strong>
-              <br />
-              <a href="tel:+13618252862">361.825.2862</a>
-            </p>
-            <p style={{ marginTop: '18px' }}>
-              <a
-                href="https://www.google.com/maps/search/6300+Ocean+Dr,+Corpus+Christi,+TX+78412"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View on Google Maps →
-              </a>
-            </p>
+          <div className="surface-card">
+            <ContactForm />
           </div>
         </div>
       </section>
