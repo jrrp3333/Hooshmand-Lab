@@ -170,13 +170,14 @@ img {
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(16, 42, 67, 0.12);
   box-shadow: 0 2px 8px rgba(12, 35, 64, 0.06);
+  border-radius: 28px;
+  padding: 32px;
 }
 
 .hero__panel {
   position: relative;
   overflow: hidden;
   padding: 40px;
-  border-radius: 28px;
 }
 
 .hero__panel::before {
@@ -412,6 +413,10 @@ img {
 .entry-content > * + *,
 .entry-summary > * + * {
   margin-top: 1rem;
+}
+
+.entry-content {
+  padding: 0;
 }
 
 /* Team member photo */
