@@ -135,7 +135,7 @@ All colors and typography are defined in `app/styles/globals.css` and can be eas
 ## Need Help?
 
 For questions or updates:
-- Contact the lab PI or lead developer
+- Contact the lab PI or lead develope r
 - Issues and feature requests can be tracked on GitHub
 - Keep dependencies updated regularly (`npm install`)
 

@@ -63,9 +63,10 @@ This is a fully static site. Once connected to Netlify, every push to the GitHub
    - Select **"Custom DNS"**
    - Clear existing nameservers
    - Enter Netlify's nameservers:
-     - `ns1.netlify.com`
-     - `ns2.netlify.com`
-     - `ns3.netlify.com`
+     - `dns1.p03.nsone.net`
+     - `dns2.p03.nsone.net`
+     - `dns3.p03.nsone.net`
+     - `dns4.p03.nsone.net`
    - Save changes
    - **Note:** DNS propagation can take 1–48 hours, but often completes in minutes
 
