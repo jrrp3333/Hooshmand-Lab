@@ -1,7 +1,7 @@
 ---
 name: "Dr. Nasrin Hooshmand"
 role: "Faculty"
-title: "Assistant Professor of Chemistry"
+title: "Principal Investigator"
 specialization: "Nanoplasmonics, Colloid Chemistry, Light-Matter Interaction"
 email: "nasrin.hooshmand@tamucc.edu"
 office: "CS 250"

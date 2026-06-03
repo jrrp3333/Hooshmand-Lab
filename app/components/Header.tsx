@@ -56,6 +56,11 @@ export default function Header() {
               </Link>
             </li>
             <li>
+              <Link href="/facilities" onClick={() => setMenuOpen(false)}>
+                Facilities
+              </Link>
+            </li>
+            <li>
               <Link href="/contact" onClick={() => setMenuOpen(false)}>
                 Contact
               </Link>

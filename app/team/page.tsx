@@ -6,7 +6,7 @@ export const metadata = {
   description: "Faculty, students, and collaborators in Dr. Hooshmand's research lab.",
 };
 
-const ROLE_ORDER = ['Faculty', 'Postdoctoral Fellow', 'Graduate Student', 'Alumni', 'Collaborator'];
+const ROLE_ORDER = ['Faculty', 'Postdoctoral Fellow', 'Graduate Student', 'Undergraduate Student', 'Alumni', 'Collaborator'];
 
 export default function TeamPage() {
   const members = getTeamMembers();
@@ -35,7 +35,7 @@ export default function TeamPage() {
                 <section key={role}>
                   <h2>{role === 'Faculty' || role === 'Alumni' ? role : role + 's'}</h2>
                   {group.map((member) => (
-                    <div key={member.slug} className="member-card">
+                    <div key={member.slug} className={`member-card${role === 'Faculty' ? ' member-card--faculty' : ''}`}>
                       {member.image && (
                         <div className="member-card__photo">
                           <Image
@@ -55,7 +55,7 @@ export default function TeamPage() {
                           {member.email && <><a href={`mailto:${member.email}`}>{member.email}</a><br /></>}
                           {member.office && <>Office: {member.office}<br /></>}
                         </p>
-                        {member.body && <p style={{ marginTop: '8px' }}>{member.body}</p>}
+                        {member.body && <p style={{ marginTop: '8px', textAlign: role === 'Faculty' ? 'justify' : 'inherit' }}>{member.body}</p>}
                       </div>
                     </div>
                   ))}
