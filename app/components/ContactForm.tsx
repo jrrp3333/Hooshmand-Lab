@@ -94,12 +94,12 @@ export default function ContactForm() {
       {submitState.success && (
         <div
           style={{
-            backgroundColor: '#e6f3e6',
-            border: '1px solid #4caf50',
-            color: '#2e7d32',
-            padding: '16px',
-            borderRadius: '4px',
-            marginBottom: '20px',
+            backgroundColor: 'rgba(0, 102, 102, 0.08)',
+            border: '1px solid rgba(0, 102, 102, 0.2)',
+            color: '#006666',
+            padding: '16px 18px',
+            borderRadius: '16px',
+            marginBottom: '24px',
           }}
         >
           <strong>Success!</strong> Your message has been sent. We'll get back to you soon.
@@ -109,12 +109,12 @@ export default function ContactForm() {
       {submitState.error && (
         <div
           style={{
-            backgroundColor: '#fee',
-            border: '1px solid #f44',
-            color: '#c33',
-            padding: '16px',
-            borderRadius: '4px',
-            marginBottom: '20px',
+            backgroundColor: 'rgba(102, 51, 51, 0.08)',
+            border: '1px solid rgba(102, 51, 51, 0.2)',
+            color: '#663333',
+            padding: '16px 18px',
+            borderRadius: '16px',
+            marginBottom: '24px',
           }}
         >
           <strong>Error:</strong> {submitState.error}
@@ -122,14 +122,15 @@ export default function ContactForm() {
       )}
 
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: '20px' }}>
+        <div style={{ marginBottom: '22px' }}>
           <label
             htmlFor="name"
             style={{
               display: 'block',
-              marginBottom: '8px',
+              marginBottom: '10px',
               fontWeight: 600,
               color: '#102a43',
+              fontSize: '0.96rem',
             }}
           >
             Name
@@ -144,24 +145,35 @@ export default function ContactForm() {
             required
             style={{
               width: '100%',
-              padding: '12px',
+              padding: '14px 16px',
               border: '1px solid #d6dde5',
-              borderRadius: '4px',
+              borderRadius: '14px',
               fontFamily: 'inherit',
               fontSize: '16px',
               boxSizing: 'border-box',
+              backgroundColor: 'rgba(255, 255, 255, 0.5)',
+              transition: 'border-color 180ms ease, background-color 180ms ease',
+            }}
+            onFocus={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(0, 102, 102, 0.3)';
+              e.currentTarget.style.backgroundColor = '#ffffff';
+            }}
+            onBlur={(e) => {
+              e.currentTarget.style.borderColor = '#d6dde5';
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
             }}
           />
         </div>
 
-        <div style={{ marginBottom: '20px' }}>
+        <div style={{ marginBottom: '22px' }}>
           <label
             htmlFor="email"
             style={{
               display: 'block',
-              marginBottom: '8px',
+              marginBottom: '10px',
               fontWeight: 600,
               color: '#102a43',
+              fontSize: '0.96rem',
             }}
           >
             Email
@@ -176,24 +188,35 @@ export default function ContactForm() {
             required
             style={{
               width: '100%',
-              padding: '12px',
+              padding: '14px 16px',
               border: '1px solid #d6dde5',
-              borderRadius: '4px',
+              borderRadius: '14px',
               fontFamily: 'inherit',
               fontSize: '16px',
               boxSizing: 'border-box',
+              backgroundColor: 'rgba(255, 255, 255, 0.5)',
+              transition: 'border-color 180ms ease, background-color 180ms ease',
+            }}
+            onFocus={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(0, 102, 102, 0.3)';
+              e.currentTarget.style.backgroundColor = '#ffffff';
+            }}
+            onBlur={(e) => {
+              e.currentTarget.style.borderColor = '#d6dde5';
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
             }}
           />
         </div>
 
-        <div style={{ marginBottom: '20px' }}>
+        <div style={{ marginBottom: '22px' }}>
           <label
             htmlFor="subject"
             style={{
               display: 'block',
-              marginBottom: '8px',
+              marginBottom: '10px',
               fontWeight: 600,
               color: '#102a43',
+              fontSize: '0.96rem',
             }}
           >
             Subject
@@ -208,24 +231,35 @@ export default function ContactForm() {
             required
             style={{
               width: '100%',
-              padding: '12px',
+              padding: '14px 16px',
               border: '1px solid #d6dde5',
-              borderRadius: '4px',
+              borderRadius: '14px',
               fontFamily: 'inherit',
               fontSize: '16px',
               boxSizing: 'border-box',
+              backgroundColor: 'rgba(255, 255, 255, 0.5)',
+              transition: 'border-color 180ms ease, background-color 180ms ease',
+            }}
+            onFocus={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(0, 102, 102, 0.3)';
+              e.currentTarget.style.backgroundColor = '#ffffff';
+            }}
+            onBlur={(e) => {
+              e.currentTarget.style.borderColor = '#d6dde5';
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
             }}
           />
         </div>
 
-        <div style={{ marginBottom: '20px' }}>
+        <div style={{ marginBottom: '28px' }}>
           <label
             htmlFor="message"
             style={{
               display: 'block',
-              marginBottom: '8px',
+              marginBottom: '10px',
               fontWeight: 600,
               color: '#102a43',
+              fontSize: '0.96rem',
             }}
           >
             Message
@@ -240,13 +274,23 @@ export default function ContactForm() {
             required
             style={{
               width: '100%',
-              padding: '12px',
+              padding: '14px 16px',
               border: '1px solid #d6dde5',
-              borderRadius: '4px',
+              borderRadius: '14px',
               fontFamily: 'inherit',
               fontSize: '16px',
               resize: 'vertical',
               boxSizing: 'border-box',
+              backgroundColor: 'rgba(255, 255, 255, 0.5)',
+              transition: 'border-color 180ms ease, background-color 180ms ease',
+            }}
+            onFocus={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(0, 102, 102, 0.3)';
+              e.currentTarget.style.backgroundColor = '#ffffff';
+            }}
+            onBlur={(e) => {
+              e.currentTarget.style.borderColor = '#d6dde5';
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
             }}
           />
         </div>
@@ -257,14 +301,23 @@ export default function ContactForm() {
           style={{
             backgroundColor: '#102a43',
             color: '#ffffff',
-            padding: '12px 24px',
+            padding: '14px 28px',
             border: 'none',
-            borderRadius: '4px',
-            fontWeight: 600,
-            fontSize: '16px',
+            borderRadius: '999px',
+            fontWeight: 700,
+            fontSize: '0.96rem',
             cursor: submitState.loading ? 'not-allowed' : 'pointer',
             opacity: submitState.loading ? 0.7 : 1,
-            transition: 'opacity 0.2s',
+            transition: 'opacity 180ms ease, transform 180ms ease',
+            transform: submitState.loading ? 'none' : 'translateY(0)',
+          }}
+          onMouseEnter={(e) => {
+            if (!submitState.loading) {
+              e.currentTarget.style.transform = 'translateY(-1px)';
+            }
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
           }}
         >
           {submitState.loading ? 'Sending...' : 'Send Message'}
