@@ -29,8 +29,9 @@ export default function ResearchPage() {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    width={900}
-                    height={280}
+                    width={1200}
+                    height={600}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 900px"
                     className="research-image"
                   />
                 )}
