@@ -61,7 +61,7 @@ export default function FacilitiesPage() {
           <article className="surface-card page-hero__panel">
             <div className="entry-content">
               <p>
-                Dr. Hooshmand's research lab is equipped with state-of-the-art instrumentation for nanoscale synthesis,
+                Dr. Hooshmand&apos;s research lab is equipped with state-of-the-art instrumentation for nanoscale synthesis,
                 characterization, and analysis. Our facilities support cutting-edge research in nanoplasmonics, colloid
                 chemistry, and biomedical applications.
               </p>

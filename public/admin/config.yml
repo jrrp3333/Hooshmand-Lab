@@ -5,9 +5,9 @@ backend:
 # Uncomment the next line when running locally with `npx netlify-cms-proxy-server`
 # local_backend: true
 
-site_url: https://hooshmandlabs.org
-display_url: https://hooshmandlabs.org
-logo_url: https://hooshmandlabs.org/images/uploads/pnp-overview.png
+site_url: https://hooshmandlab.org
+display_url: https://hooshmandlab.org
+logo_url: https://hooshmandlab.org/images/uploads/pnp-overview.png
 
 show_preview_links: false
 

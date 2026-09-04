@@ -24,7 +24,7 @@ export default function AdminPageClient({ research, team, news, publications }: 
   useEffect(() => {
     const auth = localStorage.getItem('admin_auth');
     if (auth === 'true') {
-      setIsAuthenticated(true);
+      queueMicrotask(() => setIsAuthenticated(true));
     }
   }, []);
 

@@ -72,7 +72,7 @@ package.json                # Dependencies
 
 ### For the Lab PI (No Code Required)
 
-The admin panel lets you update content without touching code. Log in at `/admin` to modify:
+The Decap CMS admin panel lets you update content without touching code. Log in at `/admin/` to modify:
 - **Research**: Lab focus areas and descriptions
 - **Team**: Add/edit member profiles and photos
 - **Publications**: Add papers, PDFs, or links
@@ -80,13 +80,13 @@ The admin panel lets you update content without touching code. Log in at `/admin
 
 ### For Developers
 
-Content is stored in React components. To make changes:
+Content is stored as Markdown files in `content/`. To make changes:
 
 1. Edit the relevant page in `app/`
-   - Homepage content: `app/page.tsx`
-   - Team members: `app/team/page.tsx`
-   - Publications: `app/publications/page.tsx`
-   - News: `app/news/page.tsx`
+   - Homepage layout: `app/page.tsx`
+   - Team members: `content/team/`
+   - Publications: `content/publications/`
+   - News: `content/news/`
    - Styling: `app/styles/globals.css`
 
 2. Commit and push:
@@ -135,7 +135,7 @@ All colors and typography are defined in `app/styles/globals.css` and can be eas
 ## Need Help?
 
 For questions or updates:
-- Contact the lab PI or lead develope r
+- Contact the lab PI or lead developer
 - Issues and feature requests can be tracked on GitHub
 - Keep dependencies updated regularly (`npm install`)
 

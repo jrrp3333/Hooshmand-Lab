@@ -2,23 +2,15 @@
 
 ## Overview
 
-The admin panel lets Dr. Hooshmand update all lab content (Research, Team, News, Publications) **without touching any code**. It's accessible at `/admin` and uses a simple PIN-based login.
+The Decap CMS admin panel lets Dr. Hooshmand update all lab content (Research, Team, News, Publications) **without touching any code**. It is accessible at `/admin/` and uses Netlify Identity for authentication.
 
 ---
 
 ## 🔐 Accessing the Admin Panel
 
-1. Visit: `https://hooshmandlab.org/admin` (once DNS is configured)
-2. Enter the PIN when prompted
-3. You're in! Use the sidebar to navigate between sections.
-
-### Default PIN
-
-**Currently set to: `1234`**
-
-⚠️ **IMPORTANT:** Change this PIN immediately for security. See "Changing the PIN" below.
-
----
+1. Visit: `https://hooshmandlab.org/admin/` (once DNS is configured)
+2. Sign in with your Netlify Identity account
+3. Use the sidebar to navigate between sections.
 
 ## 📝 Editing Content
 
@@ -112,27 +104,9 @@ Click **"Log Out"** in the sidebar. You'll be returned to the login screen.
 
 ## 🔒 Security Notes
 
-### Changing the PIN
-
-The default PIN (1234) is for testing. **Change it before launch:**
-
-1. Edit `app/components/AdminAuthGate.tsx`
-2. Find this line:
-   ```typescript
-   const CORRECT_PIN = '1234';
-   ```
-3. Change to your chosen PIN:
-   ```typescript
-   const CORRECT_PIN = '5892';  // Use a 4-6 digit PIN
-   ```
-4. Save and commit to GitHub (Netlify will rebuild)
-
-### Best Practices
-
-- Use a PIN that's easy for you to remember but hard to guess
-- Don't share the PIN in emails—share verbally or use a secure method
-- The PIN is stored **only** in code (not in a database), so it's secure
-- Consider updating the PIN yearly
+Access is controlled by Netlify Identity and Git Gateway. Do not commit credentials or
+personal access tokens to the repository. Manage administrators in the Netlify site
+settings and remove access when someone leaves the project.
 
 ---
 

@@ -10,7 +10,7 @@ export default function Header() {
     <header className="site-header">
       <div className="shell-inner site-header__bar">
         <Link href="/" className="site-branding">
-          <span className="site-branding__kicker">Dr. Hooshmand's Research Lab</span>
+          <span className="site-branding__kicker">Dr. Hooshmand&apos;s Research Lab</span>
           <span className="site-branding__title">Research & Discovery</span>
           <span className="site-branding__meta">Texas A&M University-Corpus Christi</span>
         </Link>
