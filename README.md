@@ -17,7 +17,7 @@ This is the redesigned Hooshmand Lab website—migrated from the old WordPress s
 ## Getting Started (Locally)
 
 ### Prerequisites
-- Node.js 20.9+ installed
+- Node.js 22+ installed
 - Git
 
 ### Setup

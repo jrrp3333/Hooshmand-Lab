@@ -16,7 +16,7 @@ npm run build
 npm run lint
 ```
 
-Netlify uses the Next.js runtime configured by `@netlify/plugin-nextjs`; do not commit `.next/`, `node_modules/`, or `.netlify/`.
+Netlify uses the Next.js runtime configured by `@netlify/plugin-nextjs` with `.next/` as its publish directory; do not commit `.next/`, `node_modules/`, or `.netlify/`.
 
 ## Architecture
 
