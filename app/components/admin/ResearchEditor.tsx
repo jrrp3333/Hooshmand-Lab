@@ -68,7 +68,7 @@ export default function ResearchEditor({ initialProjects }: { initialProjects: R
   return (
     <div className="admin-editor">
       <h2 className="admin-section-title">Research Projects</h2>
-      <p className="admin-section-subtitle">Manage the lab's current research initiatives.</p>
+      <p className="admin-section-subtitle">Manage the lab&apos;s current research initiatives.</p>
 
       {message && <div className={`admin-message ${message.includes('✓') ? 'is-success' : 'is-error'}`}>{message}</div>}
 

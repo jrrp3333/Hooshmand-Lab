@@ -3,13 +3,13 @@
  * Uses app password authentication (not regular Gmail password)
  */
 
-import nodemailer from 'nodemailer';
+import nodemailer, { type Transporter } from 'nodemailer';
 import { EmailOptions, EmailProvider } from '../email';
 
 class GmailProvider implements EmailProvider {
-  private transporter: nodemailer.Transporter | null = null;
+  private transporter: Transporter | null = null;
 
-  async createTransport(): Promise<nodemailer.Transporter> {
+  async createTransport(): Promise<Transporter> {
     if (this.transporter) {
       return this.transporter;
     }
