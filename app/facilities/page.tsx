@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export const metadata = {
   title: "Facilities | Dr. Hooshmand's Research Lab",
   description: "Laboratory facilities and instrumentation in Dr. Hooshmand's research lab at TAMUCC.",
@@ -10,37 +8,31 @@ const FACILITIES = [
     id: 'uv-vis',
     name: 'UV-Visible Spectrophotometer',
     brand: 'PerkinElmer',
-    image: '/images/uploads/placeholder-uv-vis.jpg',
   },
   {
     id: 'ftir',
     name: 'FTIR Spectrometer',
     brand: 'Thermo Fisher Scientific',
-    image: '/images/uploads/placeholder-ftir.jpg',
   },
   {
     id: 'tem',
     name: 'Transmission Electron Microscope',
     brand: 'JEOL',
-    image: '/images/uploads/placeholder-tem.jpg',
   },
   {
     id: 'sem',
     name: 'Scanning Electron Microscope',
     brand: 'Zeiss',
-    image: '/images/uploads/placeholder-sem.jpg',
   },
   {
     id: 'dls',
     name: 'Dynamic Light Scattering',
     brand: 'Malvern',
-    image: '/images/uploads/placeholder-dls.jpg',
   },
   {
     id: 'hplc',
     name: 'High-Performance Liquid Chromatography',
     brand: 'Agilent',
-    image: '/images/uploads/placeholder-hplc.jpg',
   },
 ];
 
@@ -69,15 +61,6 @@ export default function FacilitiesPage() {
               <div className="facilities-grid">
                 {FACILITIES.map((facility) => (
                   <div key={facility.id} className="facility-box">
-                    <div className="facility-image-wrap">
-                      <Image
-                        src={facility.image}
-                        alt={facility.name}
-                        width={300}
-                        height={250}
-                        className="facility-image"
-                      />
-                    </div>
                     <div className="facility-caption">
                       <h3>{facility.name}</h3>
                       <p className="facility-brand">{facility.brand}</p>

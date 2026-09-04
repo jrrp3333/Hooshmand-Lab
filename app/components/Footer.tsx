@@ -30,6 +30,12 @@ export default function Footer() {
             <li>
               <Link href="/news">News</Link>
             </li>
+            <li>
+              <Link href="/facilities">Facilities</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
           </ul>
         </section>
 

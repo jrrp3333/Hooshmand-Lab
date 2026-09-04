@@ -14,6 +14,7 @@ export interface EmailOptions {
   text: string;
   html?: string;
   from?: string;
+  replyTo?: string;
 }
 
 export interface EmailProvider {

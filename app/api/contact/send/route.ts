@@ -13,22 +13,26 @@ function validateEmail(email: string): boolean {
   return emailRegex.test(email);
 }
 
-function validateFormData(data: any): { valid: boolean; errors: string[] } {
+function validateFormData(data: unknown): { valid: boolean; errors: string[] } {
   const errors: string[] = [];
+  const formData =
+    typeof data === 'object' && data !== null
+      ? (data as Record<string, unknown>)
+      : {};
 
-  if (!data.name || typeof data.name !== 'string' || data.name.trim().length === 0) {
+  if (!formData.name || typeof formData.name !== 'string' || formData.name.trim().length === 0) {
     errors.push('Name is required');
   }
 
-  if (!data.email || typeof data.email !== 'string' || !validateEmail(data.email)) {
+  if (!formData.email || typeof formData.email !== 'string' || !validateEmail(formData.email)) {
     errors.push('Valid email address is required');
   }
 
-  if (!data.subject || typeof data.subject !== 'string' || data.subject.trim().length === 0) {
+  if (!formData.subject || typeof formData.subject !== 'string' || formData.subject.trim().length === 0) {
     errors.push('Subject is required');
   }
 
-  if (!data.message || typeof data.message !== 'string' || data.message.trim().length === 0) {
+  if (!formData.message || typeof formData.message !== 'string' || formData.message.trim().length === 0) {
     errors.push('Message is required');
   }
 
@@ -40,10 +44,9 @@ function validateFormData(data: any): { valid: boolean; errors: string[] } {
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { name, email, subject, message } = body as ContactFormData;
+    const body: unknown = await request.json();
 
-    const validation = validateFormData({ name, email, subject, message });
+    const validation = validateFormData(body);
     if (!validation.valid) {
       return NextResponse.json(
         { success: false, errors: validation.errors },
@@ -51,6 +54,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const { name, email, subject, message } = body as ContactFormData;
     const recipientEmail = process.env.EMAIL_TO_ADDRESS || process.env.EMAIL_USER;
     if (!recipientEmail) {
       console.error('EMAIL_TO_ADDRESS or EMAIL_USER not configured');
@@ -77,7 +81,8 @@ export async function POST(request: NextRequest) {
       subject: `Contact Form: ${subject}`,
       text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`,
       html: emailHtml,
-      from: email,
+      from: process.env.EMAIL_FROM_ADDRESS || process.env.EMAIL_USER,
+      replyTo: email,
     });
 
     if (!result.success) {
@@ -96,7 +101,7 @@ export async function POST(request: NextRequest) {
     console.error('Contact form error:', error);
     return NextResponse.json(
       { success: false, error: 'An unexpected error occurred. Please try again.' },
-      { status: 500 }
+      { status: error instanceof SyntaxError ? 400 : 500 }
     );
   }
 }

@@ -46,6 +46,7 @@ class OutlookProvider implements EmailProvider {
         subject: options.subject,
         text: options.text,
         html: options.html,
+        replyTo: options.replyTo,
       };
 
       const info = await transporter.sendMail(mailOptions);

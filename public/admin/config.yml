@@ -115,6 +115,7 @@ collections:
           - "Graduate Student"
           - "Undergraduate Student"
           - "Postdoctoral Fellow"
+          - "Alumni"
           - "Collaborator"
       - label: "Title / Position"
         name: "title"
