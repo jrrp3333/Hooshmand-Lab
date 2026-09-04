@@ -19,12 +19,12 @@ This is a fully static site. Once connected to Netlify, every push to the GitHub
    git init
    git add .
    git commit -m "Initial Hooshmand Lab static site"
-   git remote add origin https://github.com/yourusername/hooshmand-lab.git
+   git remote add origin https://github.com/jrrp3333/Hooshmand-Lab.git
    git branch -M main
    git push -u origin main
    ```
 
-2. **Verify** the repository is on GitHub at `https://github.com/yourusername/hooshmand-lab`
+2. **Verify** the repository is on GitHub at `https://github.com/jrrp3333/Hooshmand-Lab`
 
 ### Step 2: Connect Netlify to GitHub
 
@@ -116,11 +116,11 @@ Git Gateway allows Decap CMS to commit content changes to your GitHub repository
 2. Click **"Invite users"**
 3. Enter the professor's email address
 4. The professor receives an email with a link to set their password
-5. After setting the password, they can log in at `https://hooshmandlabs.org/admin`
+5. After setting the password, they can log in at `https://hooshmandlab.org/admin`
 
 ### Step 4: Verify the admin panel
 
-1. Visit `https://hooshmandlabs.org/admin`
+1. Visit `https://hooshmandlab.org/admin`
 2. Log in with the professor's credentials
 3. Verify all four collections are accessible: News, Research, Team, Publications
 4. Create a test entry and confirm it appears on the live site after 1–2 minutes
@@ -170,4 +170,4 @@ Every time you push to the `main` branch on GitHub:
 
 **Stack:** Next.js + Netlify + GitHub + Namecheap  
 **Status:** Ready for deployment  
-**Last updated:** April 21, 2026
+**Last updated:** September 4, 2026

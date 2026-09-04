@@ -2,6 +2,8 @@ node_modules/
 .next/
 out/
 build/
+.netlify/
+*.tsbuildinfo
 *.log
 .DS_Store
 .env.local

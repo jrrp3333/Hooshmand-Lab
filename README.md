@@ -72,7 +72,7 @@ package.json                # Dependencies
 
 ### For the Lab PI (No Code Required)
 
-The admin panel lets you update content without touching code. Log in at `/admin` to modify:
+Decap CMS lets you update content without touching code. Log in at `/admin` to modify:
 - **Research**: Lab focus areas and descriptions
 - **Team**: Add/edit member profiles and photos
 - **Publications**: Add papers, PDFs, or links
@@ -135,7 +135,7 @@ All colors and typography are defined in `app/styles/globals.css` and can be eas
 ## Need Help?
 
 For questions or updates:
-- Contact the lab PI or lead develope r
+- Contact the lab PI or lead developer
 - Issues and feature requests can be tracked on GitHub
 - Keep dependencies updated regularly (`npm install`)
 

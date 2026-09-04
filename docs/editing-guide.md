@@ -1,12 +1,12 @@
 # Hooshmand Lab – Content Editing Guide
 
-Since this is a static site deployed to Netlify, content editing works differently from WordPress admin. All content lives in the code, so updates require a GitHub push.
+Content lives in Markdown files and is edited through Decap CMS at `/admin`. CMS changes create Git commits, which trigger the normal Netlify build.
 
 ## How to edit content
 
 ### Option A: Edit through GitHub's web editor (easiest for small changes)
 
-1. Go to https://github.com/yourusername/hooshmand-lab
+1. Go to https://github.com/jrrp3333/Hooshmand-Lab
 2. Browse to the file you want to edit (see table below)
 3. Click the pencil icon to edit
 4. Make your changes
@@ -19,8 +19,8 @@ Since this is a static site deployed to Netlify, content editing works different
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/hooshmand-lab.git
-   cd hooshmand-lab
+   git clone https://github.com/jrrp3333/Hooshmand-Lab.git
+   cd "Hooshmands Website"
    ```
 
 2. Edit files locally using any text editor (VS Code, Notepad++, etc.)
@@ -115,16 +115,9 @@ Let's say you want to add a recent publication announcement.
 
 ---
 
-## Future: Content management system (CMS)
+## CMS administration
 
-If editing code becomes cumbersome, we can add a **headless CMS** (like Decap CMS) that provides a web interface for editing:
-
-- No code changes required
-- Point-and-click editing
-- Still deploys to GitHub → Netlify automatically
-- Example: https://decapcms.org/
-
-For now, the direct-edit approach is simpler and works well for an academic lab site that doesn't update daily.
+The CMS configuration is in `public/admin/config.yml`. Netlify Identity and Git Gateway must be enabled before `/admin` can commit changes. See [`ADMIN_GUIDE.md`](./ADMIN_GUIDE.md) and [`deployment-guide.md`](./deployment-guide.md) for setup and access instructions.
 
 ---
 
