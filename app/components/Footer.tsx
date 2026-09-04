@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="site-footer__inner">
         <section>
           <p className="site-branding__kicker">Research Community</p>
-          <h2 className="footer-title">Dr. Hooshmand's Research Lab</h2>
+          <h2 className="footer-title">Dr. Hooshmand&apos;s Research Lab</h2>
           <p>A formal academic presence for research, student mentorship, and scientific updates.</p>
         </section>
 
@@ -46,7 +46,7 @@ export default function Footer() {
       </div>
       <div className="site-footer__meta">
         <div className="site-footer__inner" style={{ display: 'block', padding: 0 }}>
-          <span>&copy; {currentYear} Dr. Hooshmand's Research Lab. All rights reserved.</span>
+          <span>&copy; {currentYear} Dr. Hooshmand&apos;s Research Lab. All rights reserved.</span>
         </div>
       </div>
     </footer>

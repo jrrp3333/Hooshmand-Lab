@@ -4,7 +4,7 @@
  * Provider is selected via EMAIL_SERVICE environment variable
  */
 
-import nodemailer from 'nodemailer';
+import nodemailer, { type Transporter } from 'nodemailer';
 import GmailProvider from './emailProviders/gmail';
 import OutlookProvider from './emailProviders/outlook';
 
@@ -17,7 +17,7 @@ export interface EmailOptions {
 }
 
 export interface EmailProvider {
-  createTransport(): Promise<nodemailer.Transporter>;
+  createTransport(): Promise<Transporter>;
   sendEmail(options: EmailOptions): Promise<{ success: boolean; messageId?: string; error?: string }>;
 }
 
@@ -52,4 +52,6 @@ class EmailService {
   }
 }
 
-export default new EmailService();
+const emailService = new EmailService();
+
+export default emailService;

@@ -92,7 +92,7 @@ export default function Home() {
               <h2 className="section-title">Active Research Projects</h2>
             </div>
             <p className="section-copy">
-              Explore the lab's current initiatives and research directions.
+              Explore the lab&apos;s current initiatives and research directions.
             </p>
           </div>
 

@@ -102,7 +102,7 @@ export default function ContactForm() {
             marginBottom: '24px',
           }}
         >
-          <strong>Success!</strong> Your message has been sent. We'll get back to you soon.
+          <strong>Success!</strong> Your message has been sent. We&apos;ll get back to you soon.
         </div>
       )}
 

@@ -72,7 +72,11 @@ package.json                # Dependencies
 
 ### For the Lab PI (No Code Required)
 
+<<<<<<< HEAD
 Decap CMS lets you update content without touching code. Log in at `/admin` to modify:
+=======
+The Decap CMS admin panel lets you update content without touching code. Log in at `/admin/` to modify:
+>>>>>>> 9e4e0c33af1d893dfad1a1e84348258b99aaae3c
 - **Research**: Lab focus areas and descriptions
 - **Team**: Add/edit member profiles and photos
 - **Publications**: Add papers, PDFs, or links
@@ -80,13 +84,13 @@ Decap CMS lets you update content without touching code. Log in at `/admin` to m
 
 ### For Developers
 
-Content is stored in React components. To make changes:
+Content is stored as Markdown files in `content/`. To make changes:
 
 1. Edit the relevant page in `app/`
-   - Homepage content: `app/page.tsx`
-   - Team members: `app/team/page.tsx`
-   - Publications: `app/publications/page.tsx`
-   - News: `app/news/page.tsx`
+   - Homepage layout: `app/page.tsx`
+   - Team members: `content/team/`
+   - Publications: `content/publications/`
+   - News: `content/news/`
    - Styling: `app/styles/globals.css`
 
 2. Commit and push:
