@@ -13,6 +13,7 @@ Open `http://localhost:3000`. Before opening a pull request, run:
 
 ```powershell
 npm run build
+npm run lint
 ```
 
 Netlify uses the Next.js runtime configured by `@netlify/plugin-nextjs`; do not commit `.next/`, `node_modules/`, or `.netlify/`.
@@ -26,6 +27,7 @@ Netlify uses the Next.js runtime configured by `@netlify/plugin-nextjs`; do not 
 - `public/admin/` contains the Decap CMS app and configuration.
 - `netlify.toml` defines the build plugin, redirects, and admin headers.
 - `app/api/contact/send/route.ts` sends contact form email through the configured provider. Netlify deploys this route as a serverless function.
+- `lib/email.ts` selects Gmail or Outlook from `EMAIL_SERVICE`; providers require `EMAIL_USER` and `EMAIL_PASSWORD`.
 
 ## Content workflow
 
@@ -40,7 +42,7 @@ Use `/admin` for content changes after Netlify Identity and Git Gateway are enab
    - Configure contact-form environment variables in Netlify; never commit `.env.local`.
 2. **Content audit**
    - Review every team, research, news, and publication entry with the PI.
-   - Replace placeholders and verify dates, author names, links, images, and accessibility text.
+   - Verify dates, author names, links, images, and accessibility text. Facilities currently list equipment without image assets; add real images only when they are available.
    - Confirm the public image files referenced by Markdown exist under `public/images/uploads/`.
 3. **Quality pass**
    - Test every route at desktop and mobile widths.
@@ -56,5 +58,6 @@ Use `/admin` for content changes after Netlify Identity and Git Gateway are enab
 ## Important caveats
 
 - The site uses the Netlify Next.js runtime rather than a static export so the contact route can run server-side.
+- Contact email configuration uses `EMAIL_SERVICE`, `EMAIL_USER`, `EMAIL_PASSWORD`, and optional `EMAIL_FROM_ADDRESS` / `EMAIL_TO_ADDRESS` Netlify environment variables. Visitor addresses are sent as `Reply-To`, not as the SMTP sender.
 - CMS authentication is provided by Netlify Identity, not by an application PIN. Do not reintroduce a client-side password or PIN.
 - `public/admin/config.yml` must use the canonical `hooshmandlab.org` domain.
