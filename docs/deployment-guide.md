@@ -10,7 +10,7 @@
 
 ## Deployment: GitHub → Netlify → Namecheap
 
-This is a fully static site. Once connected to Netlify, every push to the GitHub `main` branch automatically rebuilds and deploys the site to `hooshmandlab.org`.
+This is a Next.js site deployed through Netlify's Next.js runtime. Pages are pre-rendered where possible, while the contact form runs as a managed serverless function. Every push to the GitHub `main` branch automatically rebuilds and deploys the site to `hooshmandlab.org`.
 
 ### Step 1: Push the project to GitHub
 
@@ -18,7 +18,7 @@ This is a fully static site. Once connected to Netlify, every push to the GitHub
    ```bash
    git init
    git add .
-   git commit -m "Initial Hooshmand Lab static site"
+   git commit -m "Initial Hooshmand Lab site"
    git remote add origin https://github.com/jrrp3333/Hooshmand-Lab.git
    git branch -M main
    git push -u origin main
@@ -34,7 +34,7 @@ This is a fully static site. Once connected to Netlify, every push to the GitHub
 4. Find and select the `hooshmand-lab` repository
 5. Netlify auto-detects settings from `next.config.js` and `netlify.toml`:
    - **Build command:** `npm run build`
-   - **Publish directory:** `out`
+   - **Netlify plugin:** `@netlify/plugin-nextjs` (configured in `netlify.toml`)
 6. Click **"Deploy"**
 7. Wait for the first build to complete (usually 1–2 minutes)
 

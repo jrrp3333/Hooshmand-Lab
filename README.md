@@ -43,7 +43,7 @@ This is the redesigned Hooshmand Lab website—migrated from the old WordPress s
    ```bash
    npm run build
    ```
-   The static HTML will be generated in the `out/` folder.
+   Netlify's Next.js runtime prepares the site and serverless routes for deployment.
 
 ## Project Structure
 
@@ -72,11 +72,7 @@ package.json                # Dependencies
 
 ### For the Lab PI (No Code Required)
 
-<<<<<<< HEAD
 Decap CMS lets you update content without touching code. Log in at `/admin` to modify:
-=======
-The Decap CMS admin panel lets you update content without touching code. Log in at `/admin/` to modify:
->>>>>>> 9e4e0c33af1d893dfad1a1e84348258b99aaae3c
 - **Research**: Lab focus areas and descriptions
 - **Team**: Add/edit member profiles and photos
 - **Publications**: Add papers, PDFs, or links
@@ -131,8 +127,8 @@ All colors and typography are defined in `app/styles/globals.css` and can be eas
 
 ## Performance & Security
 
-- **Fast**: No server—just static HTML served globally via CDN
-- **Secure**: No databases, no server vulnerabilities, no attack surface
+- **Fast**: Pre-rendered pages served globally through Netlify's CDN
+- **Secure**: No database; the contact handler runs as a managed Netlify function
 - **SEO-friendly**: All pages are pre-rendered with proper metadata
 - **Maintainable**: Version-controlled on GitHub, automated deployments, no DevOps overhead
 

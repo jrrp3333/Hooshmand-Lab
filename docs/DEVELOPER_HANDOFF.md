@@ -15,7 +15,7 @@ Open `http://localhost:3000`. Before opening a pull request, run:
 npm run build
 ```
 
-The production build is static and is written to `out/`. Do not commit `out/`, `.next/`, `node_modules/`, or `.netlify/`.
+Netlify uses the Next.js runtime configured by `@netlify/plugin-nextjs`; do not commit `.next/`, `node_modules/`, or `.netlify/`.
 
 ## Architecture
 
@@ -24,8 +24,8 @@ The production build is static and is written to `out/`. Do not commit `out/`, `
 - `lib/content.ts` reads and sorts Markdown at build time.
 - `public/images/uploads/` contains deployable images and CMS uploads.
 - `public/admin/` contains the Decap CMS app and configuration.
-- `netlify.toml` defines the build, publish directory, redirects, and admin headers.
-- `app/api/contact/send/route.ts` sends contact form email through the configured provider.
+- `netlify.toml` defines the build plugin, redirects, and admin headers.
+- `app/api/contact/send/route.ts` sends contact form email through the configured provider. Netlify deploys this route as a serverless function.
 
 ## Content workflow
 
@@ -55,6 +55,6 @@ Use `/admin` for content changes after Netlify Identity and Git Gateway are enab
 
 ## Important caveats
 
-- This is a static export. Server route handlers are not deployed as Netlify functions by the current configuration; the contact form therefore needs an explicit Netlify-compatible backend before it can be considered production-ready.
+- The site uses the Netlify Next.js runtime rather than a static export so the contact route can run server-side.
 - CMS authentication is provided by Netlify Identity, not by an application PIN. Do not reintroduce a client-side password or PIN.
 - `public/admin/config.yml` must use the canonical `hooshmandlab.org` domain.
