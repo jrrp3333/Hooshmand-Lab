@@ -17,7 +17,7 @@ This is the redesigned Hooshmand Lab website—migrated from the old WordPress s
 ## Getting Started (Locally)
 
 ### Prerequisites
-- Node.js 18+ installed
+- Node.js 20.9+ installed
 - Git
 
 ### Setup
@@ -44,6 +44,11 @@ This is the redesigned Hooshmand Lab website—migrated from the old WordPress s
    npm run build
    ```
    Netlify's Next.js runtime prepares the site and serverless routes for deployment.
+
+5. Run the lint check:
+   ```bash
+   npm run lint
+   ```
 
 ## Project Structure
 
