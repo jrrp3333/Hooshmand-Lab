@@ -1,7 +1,7 @@
 ---
 name: Manidhar Aduri
 role: Graduate Student
-title: Research Assistant
+title: PhD Candidate
 specialization: Machine Learning, Computer Vision, Deep Learning
 email: maduri@islander.tamucc.edu
 order: 4
