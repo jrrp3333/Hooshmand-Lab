@@ -1,6 +1,6 @@
 ---
 title: Hooshmand Lab Presents at ACS Fall 2025, Colloids Division
-date: 2025-08-24T20:30:00.000-05:00
+date: 2025-08-24T15:30:00.000-05:00
 excerpt: The Hooshmand Lab presented a nanoparticle-based electrochemical sensor
   for early cancer detection at the ACS Fall 2025 Meeting in the Colloids
   Division.
