@@ -8,8 +8,8 @@ excerpt: Congratulations to Ethan Hughes, Thomas Krozel, and Owen Wrigley for
 ---
 Congratulations to Ethan Hughes, Thomas Krozel, and Owen Wrigley for their outstanding achievement!
 
-![Student poster award photo 1](https://hooshmandlab.dreamhosters.com/wp-content/uploads/2025/04/ET-1-1024x768.jpg)
+![Student poster award photo 1](/images/uploads/et-1-1024x768.jpg)
 
-![Student poster award photo 2](https://hooshmandlab.dreamhosters.com/wp-content/uploads/2025/04/Et-2-1024x768.jpg)
+![Student poster award photo 2](/images/uploads/et-2-1024x768.jpg)
 
-![Student poster award photo 3](https://hooshmandlab.dreamhosters.com/wp-content/uploads/2025/04/ET-5-1024x768.jpg)
+![Student poster award photo 3](/images/uploads/et-5-1024x768.jpg)
