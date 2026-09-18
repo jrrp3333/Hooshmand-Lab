@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
 import { getNewsItems } from '../../lib/content';
 
 export const metadata = {
@@ -25,12 +27,35 @@ export default function NewsPage() {
           {newsItems.map((item) => (
             <article key={item.slug} className="surface-card news-card">
               <span className="entry-meta">
-                {new Date(item.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                {new Date(item.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
               </span>
               <h2 className="card-title">{item.title}</h2>
+              {item.body.match(/!\[[^\]]*\]\(([^)]+)\)/)?.[1] && (
+                <Image
+                  src={item.body.match(/!\[[^\]]*\]\(([^)]+)\)/)![1]}
+                  alt={item.title}
+                  width={1200}
+                  height={900}
+                  unoptimized
+                  style={{ width: '100%', height: 'auto', borderRadius: '12px', margin: '16px 0' }}
+                />
+              )}
               <div className="entry-summary">
                 <p>{item.excerpt}</p>
               </div>
+              {item.body && (
+                <details style={{ marginTop: '16px' }}>
+                  <summary style={{ cursor: 'pointer', fontWeight: 600 }}>Read full article</summary>
+                  <div className="entry-content" style={{ marginTop: '16px', overflowWrap: 'anywhere' }}>
+                    <ReactMarkdown components={{
+                      img: ({ src, alt }) => typeof src === 'string' ? (
+                        <Image src={src} alt={alt || 'Lab news photo'} width={1200} height={900}
+                          unoptimized style={{ width: '100%', height: 'auto', borderRadius: '12px' }} />
+                      ) : null,
+                    }}>{item.body}</ReactMarkdown>
+                  </div>
+                </details>
+              )}
             </article>
           ))}
           {newsItems.length === 0 && (
