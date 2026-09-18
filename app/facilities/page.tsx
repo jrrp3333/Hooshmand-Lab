@@ -1,39 +1,16 @@
+import Image from 'next/image';
+
 export const metadata = {
   title: "Facilities | Dr. Hooshmand's Research Lab",
   description: "Laboratory facilities and instrumentation in Dr. Hooshmand's research lab at TAMUCC.",
 };
 
 const FACILITIES = [
-  {
-    id: 'uv-vis',
-    name: 'UV-Visible Spectrophotometer',
-    brand: 'PerkinElmer',
-  },
-  {
-    id: 'ftir',
-    name: 'FTIR Spectrometer',
-    brand: 'Thermo Fisher Scientific',
-  },
-  {
-    id: 'tem',
-    name: 'Transmission Electron Microscope',
-    brand: 'JEOL',
-  },
-  {
-    id: 'sem',
-    name: 'Scanning Electron Microscope',
-    brand: 'Zeiss',
-  },
-  {
-    id: 'dls',
-    name: 'Dynamic Light Scattering',
-    brand: 'Malvern',
-  },
-  {
-    id: 'hplc',
-    name: 'High-Performance Liquid Chromatography',
-    brand: 'Agilent',
-  },
+  { id: '3d-printer', name: '3D Printer', image: '/images/uploads/3d-printer-1024x768.jpg', width: 1024, height: 768 },
+  { id: 'inverted-microscope', name: 'Inverted Microscope', image: '/images/uploads/inverted-microscope-ix70-768x1024.jpg', width: 768, height: 1024 },
+  { id: 'nanosight', name: 'NanoSight Pro', image: '/images/uploads/nano-insight-1024x768.jpg', width: 1024, height: 768 },
+  { id: 'raman', name: 'Raman Spectroscopy', image: '/images/uploads/raman-spectroscopy-1024x768.jpg', width: 1024, height: 768 },
+  { id: 'uv-vis', name: 'UV-Visible', image: '/images/uploads/uv-visible-1024x768.jpg', width: 1024, height: 768 },
 ];
 
 export default function FacilitiesPage() {
@@ -61,9 +38,12 @@ export default function FacilitiesPage() {
               <div className="facilities-grid">
                 {FACILITIES.map((facility) => (
                   <div key={facility.id} className="facility-box">
+                    <Image src={facility.image} alt={facility.name}
+                      width={facility.width} height={facility.height}
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      style={{ width: '100%', height: '260px', objectFit: 'contain', background: '#f7f8fa' }} />
                     <div className="facility-caption">
                       <h3>{facility.name}</h3>
-                      <p className="facility-brand">{facility.brand}</p>
                     </div>
                   </div>
                 ))}
