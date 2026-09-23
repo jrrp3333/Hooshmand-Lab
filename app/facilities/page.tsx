@@ -6,11 +6,9 @@ export const metadata = {
 };
 
 const FACILITIES = [
-  { id: '3d-printer', name: '3D Printer', image: '/images/uploads/3d-printer-1024x768.jpg', width: 1024, height: 768 },
-  { id: 'inverted-microscope', name: 'Inverted Microscope', image: '/images/uploads/inverted-microscope-ix70-768x1024.jpg', width: 768, height: 1024 },
+  { id: 'keyence-microscope', name: 'KEYENCE Digital Microscope', image: '/images/uploads/keyence-digital-microscope.jpg', width: 5712, height: 4284 },
   { id: 'nanosight', name: 'NanoSight Pro', image: '/images/uploads/nano-insight-1024x768.jpg', width: 1024, height: 768 },
   { id: 'raman', name: 'Raman Spectroscopy', image: '/images/uploads/raman-spectroscopy-1024x768.jpg', width: 1024, height: 768 },
-  { id: 'uv-vis', name: 'UV-Visible', image: '/images/uploads/uv-visible-1024x768.jpg', width: 1024, height: 768 },
 ];
 
 export default function FacilitiesPage() {
